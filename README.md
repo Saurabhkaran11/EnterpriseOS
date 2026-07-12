@@ -3,6 +3,8 @@
 **The AI employee that operates your business.**
 
 A local-first hackathon demo with five connected enterprise tools, realistic seeded data, and resettable SQLite state. No API keys or external accounts are needed.
+https://enterprise-os-gamma.vercel.app/
+
 
 ## Start
 
