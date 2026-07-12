@@ -1,0 +1,44 @@
+preset:
+  name: enterpriseos-agent-sandbox
+  description: "Secure isolation policies for the EnterpriseOS computer-use and reasoning agent"
+
+network_policies:
+  local_dashboard:
+    name: local-dashboard
+    endpoints:
+      - host: localhost
+        port: 3000
+        protocol: rest
+        access: read-write
+      - host: 127.0.0.1
+        port: 3000
+        protocol: rest
+        access: read-write
+
+  local_api:
+    name: local-api
+    endpoints:
+      - host: localhost
+        port: 8000
+        protocol: rest
+        access: read-write
+      - host: 127.0.0.1
+        port: 8000
+        protocol: rest
+        access: read-write
+
+  hcompany_api:
+    name: hcompany-api
+    endpoints:
+      - host: api.hcompany.ai
+        port: 443
+        protocol: rest
+        access: read-write
+
+  nvidia_nim:
+    name: nvidia-nim
+    endpoints:
+      - host: integrate.api.nvidia.com
+        port: 443
+        protocol: rest
+        access: read-write
