@@ -22,6 +22,8 @@ Workflow state is stored in local SQLite, so refreshing the dashboard does not l
 
 For the exact two-minute presentation, architecture narrative, backup path, troubleshooting, and judge Q&A, see `DEMO.md`.
 
+For the complete product description, enterprise problem statement, HLD/LLD diagrams, provider data flows, security model, deployment topology, and verified sponsor demo script, see `ENTERPRISEOS_ARCHITECTURE_AND_DEMO.md`.
+
 ## H Company computer use
 
 The computer-use layer lives in `backend/computer_use.py` and provides `plan_action`, `execute_browser_goal`, `get_status`, `cancel_execution`, and `health_check` through both real and mock providers. The demo defaults to a deterministic mock harness that navigates only EnterpriseOS routes and stops before meeting confirmation.
