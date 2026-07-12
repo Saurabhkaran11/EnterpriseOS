@@ -317,7 +317,10 @@ async def lifespan(_: FastAPI):
     yield
 
 app = FastAPI(title="EnterpriseOS Demo API", lifespan=lifespan)
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"], allow_methods=["*"], allow_headers=["*"])
+cors_origins = ["http://localhost:3000", "http://127.0.0.1:3000"]
+if os.getenv("ENTERPRISEOS_PUBLIC_URL"):
+    cors_origins.append(os.environ["ENTERPRISEOS_PUBLIC_URL"].rstrip("/"))
+app.add_middleware(CORSMiddleware, allow_origins=cors_origins, allow_methods=["*"], allow_headers=["*"])
 
 @app.get("/health")
 def health(): return {"status": "ok", "service": "enterpriseos-api"}
